@@ -1,0 +1,14 @@
+<p>title: {{ title }}</p>
+<div class="movies">
+  <!-- listOfMovies is from movies.component -->
+  <!-- [movie] is from movie component -->
+  <app-movie
+    *ngFor="
+      let movie of listOfMovies;
+      let i = index;
+      let first = first;
+      let last = last
+    "
+    [movie]="movie"
+  />
+</div>

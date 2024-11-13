@@ -1,0 +1,6 @@
+<app-movies 
+    *ngIf="shouldDisplayMovie" 
+    [listOfMovies]="['m1','m2','m3']">
+</app-movies>
+
+<button (click)="toggleViewComponent()">Toggle View Component</button>

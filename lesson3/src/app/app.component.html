@@ -1,0 +1,13 @@
+<h2>{{ title }}</h2>
+
+<div class="directives" *ngIf="listOfMovies.length > 1">
+  {{ mainChar }}
+</div>
+
+<div class="list-of-movies" [ngStyle]="{'background': shouldBeRed ? 'red' : 'blue'}">
+  <div class="movie" *ngFor="let movie of listOfMovies"
+  [ngStyle]="{'color': shouldBeRed ? 'yellow' : 'white'}">{{ movie }}</div>
+</div>
+
+<!-- event binding -->
+<button (click)="shouldBeRed = !shouldBeRed">Change</button>

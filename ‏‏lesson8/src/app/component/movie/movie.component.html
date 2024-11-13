@@ -1,0 +1,22 @@
+<p>movie works!</p>
+<!-- !! means that there is a movie -->
+<div
+  *ngIf="!!movie"
+  class="movie-container"
+  [ngStyle]="{ border: movie.rating > 8 ? '1px solid green' : '1px solid red' }"
+  [ngClass]="{ mycss: movie.rating > 8 }"
+>
+  <h1>{{ movie.name }}</h1>
+  <p>Main Character: {{ movie.mainChar | uppercase}}</p>
+  <p>Rating: {{ movie.rating }}</p>
+  <p>Release: {{ movie.releaseDate | date }}</p>
+  <!-- <p>Type: {{ movie.type }}</p> -->
+
+  <span [ngSwitch]="movie.type">
+    <p *ngSwitchCase="movieTypeEnum.Action">TYPE: {{movie.type}}</p>
+    <p *ngSwitchCase="movieTypeEnum.Drama">TYPE: : {{movie.type}}</p>
+    <p *ngSwitchDefault>Stam Movie</p>
+  </span>
+
+  <!-- <button (click)="changeMovie($event)">Change Movie</button> -->
+</div>

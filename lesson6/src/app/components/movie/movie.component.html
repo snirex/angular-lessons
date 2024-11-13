@@ -1,0 +1,12 @@
+<div
+  class="movie-container"
+  [ngStyle]="{ border: movie.rating > 8 ? '1px solid green' : '1px solid red' }"
+  [ngClass]="{ 'mycss': movie.rating > 8 }"
+>
+  <h1>{{ movie.name }}</h1>
+  <p>Main Character: {{ movie.mainChar }}</p>
+  <p>Rating: {{ movie.rating }}</p>
+  <p>Release: {{ movie.releaseDate | date }}</p>
+
+  <button (click)="changeMovie($event)">Change Movie</button>
+</div>
